@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  apache:
+    image: httpd
+    ports:
+      - '8080:80'
+    volumes:
+      - ./apache:/usr/local/apache2/htdocs/
+    networks:
+      - private_network
+
+networks:
+  private_network:
+    driver: bridge
